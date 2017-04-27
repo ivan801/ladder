@@ -3,8 +3,7 @@ dist: trusty
 sudo: required
 services:
   - docker
-env:
-  DOCKER_COMPOSE_VERSION: 1.6.2
+  
 before_install:
   # Upgrade default docker-compose
   - sudo rm -f /usr/local/bin/docker-compose
@@ -16,3 +15,12 @@ before_install:
   - DEBIAN_FRONTEND=noninteractive sudo apt-get -y -o Dpkg::Options::="--force-confnew" --force-yes install docker-engine
 script:
   - ./travis-build.sh
+
+
+env:
+  global:
+  - DOCKER_COMPOSE_VERSION: 1.6.2
+  # DOCKER_HUB_USERNAME
+  - secure: "FT5Uozd0eDxhCakw3d48cgQOg0PMEHp6KhOjD0oC9e/cWLCBDlweW1/QY+as3Z92Q34aC5SSzcNOvp5OzDDC2Z/R551VSDlduepARZRPj5PdG2YLau3KAx7Ki9w/KLvuDUekPIDrL12yeWw9e6huNh4k2y6G9FyPSfg4TKUFbcCE1CmplXUznoJUDWv5l/r4t28JsrECb4SUvLqYFLE53M2nQGQ8o9nVGOdiNiRPd4fn2vVvruWGMg9pah1+Ny62/0yY7n5P7I8BTipwsxSt7O/bLkd+BG+YscTmMujvcDe0BwIZrWSy+R77yv9EZKhkgNEJFkedR/vsiybyaHHx6FAmiCJnbN7Jm+X86rDpvI/WlrU4i4eoyKqn9KkrDnYPJJnk65y3hJ+Q8G0sYQ68eaHvnzLvyQczsojjphmbtFYdG5z+ySpN5Nh7CV3nmnvnJsuQilw1+6KK5GgOWXXxRktO83Xr9ZdBueiKE2Vs/zXoQgBj8XSr7l/3ECNAMQ7ZkuwgpbaT2f65p63t2D6i9PjMpdNtncnDXAA8hGdfIdOcHKT95q3QqkYUMvLFE7TX5d/2qpONurzdSIs//Xj6gVefK3VhhdcixKjgYM7NxCdiL3LNDPhlp+Vwd3pmU6Onk4RRHXHoyGSgCMitqBKRWPLTDjQ2DIqw6VDlBUKmaEE="
+  # DOCKER_HUB_PASSWORD
+  - secure: "b+sM9QBCYkjYFBTmlyBSksSwEDn0hMf1xFPEByQOyxALIimSDUzmqfLBY1N9Dd+rywywHQzFaXziF5tbdggFyhfLe1c6Q8CU/+MEyxcVBJWzqPDXoxIqzzLeI95INQjjUN+8HKcwJ+SmoZUrL3OFkzuAumB8CzKb/kjkFfEygcAGLKZcrWr2dxYWh+T5SFn40a1+nhp0wIk3Gv1PssXJqq+DCcjweTTg3cILF1jYiOYaatwQibQZgJHab6FpM+rl/beeRajLWM+JlQORpVMzKAq2chCKL45KtWroARChcmNtKNKapVEPsINqBnc3PKuEWu5VYUBk0e2Urw9iQuE01iqlxSRv8bYeSPKxishpHSCqmjidfOCvontLkzBu60dP+W2MnUaSwCUVOCuYtSStudJ+yhrJ767VdD5BSHFUFrSzmi5qe+OlEbTDRMUTSea4+sWFh2znC4W2DnyEZTe8BQb4oTAbGvhidIUS6yNqm3MPmLAS1IRap74lQTh+0R6XT23oOgLE916OIhW/1LYwIg7lyBqxRQu1UK//hdwEZ79/LLIFXWuc/PVEZy985T343lRX9m6ERaZeWcKHDGy25TQjttMHowBmXtdBUJgelhQLngwJoKQ38DarY9/5YtlA44XSNGS/UbXhsL6mogcmn4YC0eCHPv0YlOazpU5wU+M="
